@@ -7,6 +7,13 @@ import org.junit.Test;
 /**
  * 脱离springboot学习创建表
  * @author hsj
+ * 
+ * 摘要: 1.Spring Boot基于“习惯优于配置”的原则，为大量第三方的库提供自动配置的功能。
+ *      2.由Spring专家Josh Long主导开发的spring-boot-starters为我们在Spring Boot下使用Activiti做了自动配置。
+ *      3.其中主要自动配置包括： * 自动创建Activiti ProcessEngine的Bean；
+ *      4.所有的Activiti Service都自动注册为Spring的Bean； 
+ *      5. 创建一个Spring Job Executor；
+ *      6. 自动扫描并部署位于src/main/resources/processes目录下的流程处理文件【只会第一子集，下面嵌套不会部署】。
  *
  */
 public class TestActiviti {
