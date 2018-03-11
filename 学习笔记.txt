@@ -57,3 +57,8 @@ B.注意事项
 		    "exception": "Unknown property used in expression: ${cityServiceUpdate.update(execution,updateId,provinceId,cityName,description)}"
 		}
 	5.流程默认事务控制，连续几个service task有一个失败，其他service task做的改动都会还原。
+	
+	
+	#何胜金添加
+	http://blog.csdn.net/loveuserzzz/article/details/52789991?locationNum=13
+	http://blog.csdn.net/fanxiangru999/article/details/79074730

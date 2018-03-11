@@ -17,7 +17,8 @@
 //@SpringBootApplication
 //public class BootActivitiApplication {
 //
-//    /**
+//    /**  关于spring boot 的启动加载 一些初始化数据
+//     * http://blog.csdn.net/liwen19870618/article/details/74011098
 //     * 启动项目并 初始化表数据
 //     * select * from ACT_ID_GROUP ;
 //     * select * from ACT_ID_USER;
