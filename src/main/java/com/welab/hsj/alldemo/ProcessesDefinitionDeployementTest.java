@@ -3,7 +3,10 @@ package com.welab.hsj.alldemo;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.ZipInputStream;
 
 import org.activiti.engine.ProcessEngine;
@@ -127,6 +130,56 @@ public class ProcessesDefinitionDeployementTest {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	/**
+	 * 查找最新版本的流程定义
+	 */
+	@Test
+	@SuppressWarnings("unused")
+	public void findLastVersionProcessesDefinition(){
+		List<ProcessDefinition> lpd = pe.getRepositoryService().createProcessDefinitionQuery()
+		     .orderByProcessDefinitionVersion().asc().list();
+		//过滤最新版本
+		Map<String,ProcessDefinition> map = null;
+		if(lpd != null && lpd.size() > 0){
+			map =new LinkedHashMap<String,ProcessDefinition>();
+			for(ProcessDefinition pd:lpd){
+				map.put(pd.getKey(), pd);
+			}
+		}
+		List<ProcessDefinition> lpdlast = null;
+		if(map != null && map.size()>0){
+			//map转list
+			lpdlast = new ArrayList<ProcessDefinition>(map.values());
+		}
+		//输出最新版本的内容
+		if(lpdlast != null && lpdlast.size() > 0){
+			for(ProcessDefinition pdlast:lpdlast){
+				System.out.println("-------分割线--------");
+				System.out.println("流程定义的id="+pdlast.getId());
+				System.out.println("流程定义的名称="+pdlast.getName());
+				System.out.println("流程定义的key="+pdlast.getKey());
+				System.out.println("流程定义的version="+pdlast.getVersion());
+				System.out.println("流程定义的DeployementId="+pdlast.getDeploymentId());
+			}
+		}
+	}
+	
+	/**
+	 * 根据流程的key删除相同key的流程定义的不同版本
+	 */
+	@Test
+	public void deleteProcessesDefintionByProcesseskey(){
+		List<ProcessDefinition> lpd = pe.getRepositoryService().createProcessDefinitionQuery()
+		    .processDefinitionKey(proDedfKey).list();
+		
+		if(lpd!=null && lpd.size()>0){
+			for(ProcessDefinition pd:lpd){
+				//级联删除，不管没有没实例
+				pe.getRepositoryService().deleteDeployment(pd.getDeploymentId(), true);
+			}
+			System.out.println(String.format("删除%s个流程定义", lpd.size()));
 		}
 	}
 }
