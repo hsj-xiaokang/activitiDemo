@@ -9,6 +9,8 @@ import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.junit.Test;
+
+import com.welab.hsj.alldemo.ConstantInfo;
 /**
  * 该列子因为是写死的申请流程里面的人,写死的流程自己手动走一遍
  * @author hsj
@@ -16,16 +18,6 @@ import org.junit.Test;
  */
 public class HelloWord {
 	ProcessEngine pe = ProcessEngines.getDefaultProcessEngine();
-	
-	//流程定义的key-相当于流程的id
-	public final static String proDedfKey = "helloWord";
-	
-	//张三-申请者
-	public final static String zhangsan = "张三";
-	//李四-部门经理
-	public final static String lisi = "李四";
-	//王五-总经理
-	public final static String wangwu = "王五";
 
 	/**
 	 * springboot会自动部署resources下面的processes文件直接目录下面的流程定义文件【只会第一子集，下面嵌套不会部署】
@@ -50,7 +42,7 @@ public class HelloWord {
 	 */
 	@Test
 	public void startProcessesInstance(){
-		ProcessInstance pi = pe.getRuntimeService().startProcessInstanceByKey(proDedfKey);
+		ProcessInstance pi = pe.getRuntimeService().startProcessInstanceByKey(ConstantInfo.ProcessesInfo.proDedfKey);
 		System.out.println("流程实例id="+pi.getId());
 		System.out.println("流程定义id="+pi.getProcessDefinitionId());
 	}
@@ -63,7 +55,7 @@ public class HelloWord {
 	public void findMyPersonTask(){
 		List<Task> lt = pe.getTaskService()
 		   .createTaskQuery()
-		   .taskAssignee(wangwu)
+		   .taskAssignee(ConstantInfo.User.zhangsan)
 		   .list();
 		if(lt != null && lt.size() > 0){
 			for(Task at : lt){
@@ -87,7 +79,7 @@ public class HelloWord {
 	public void completeMyPersonTask(){
 		List<Task> lt = pe.getTaskService()
 		   .createTaskQuery()
-		   .taskAssignee(wangwu)
+		   .taskAssignee(ConstantInfo.User.zhangsan)
 		   .list();
 		TaskService ts = pe.getTaskService();
 		if(lt != null && lt.size() > 0){

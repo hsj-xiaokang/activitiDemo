@@ -25,16 +25,6 @@ import org.junit.Test;
  */
 public class ProcessesDefinitionDeployementTest {
 	ProcessEngine pe = ProcessEngines.getDefaultProcessEngine();
-	
-	//流程定义的key-相当于流程的id
-	public final static String proDedfKey = "helloWord";
-	
-	//张三-申请者
-	public final static String zhangsan = "张三";
-	//李四-部门经理
-	public final static String lisi = "李四";
-	//王五-总经理
-	public final static String wangwu = "王五";
 
 	/**
 	 * springboot会自动部署resources下面的processes文件直接目录下面的流程定义文件【只会第一子集，下面嵌套不会部署】
@@ -172,7 +162,7 @@ public class ProcessesDefinitionDeployementTest {
 	@Test
 	public void deleteProcessesDefintionByProcesseskey(){
 		List<ProcessDefinition> lpd = pe.getRepositoryService().createProcessDefinitionQuery()
-		    .processDefinitionKey(proDedfKey).list();
+		    .processDefinitionKey(ConstantInfo.ProcessesInfo.proDedfKey).list();
 		
 		if(lpd!=null && lpd.size()>0){
 			for(ProcessDefinition pd:lpd){
