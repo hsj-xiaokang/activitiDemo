@@ -10,6 +10,15 @@ public interface ConstantInfo {
     		public final static String wangwu = "王五";
     		
     		public abstract void userMethod();
+    		
+    		public final static String zhaolu = "赵六";
+    		
+    		public final static String tianqi = "田七";
+    		
+    		
+    		public final static String wangxiaowu = "王小五";
+    		public final static String zhaoxiaolu = "赵小六";
+    		public final static String tianxiaoqi = "田小七";
       }
       
       public interface ProcessesInfo{
