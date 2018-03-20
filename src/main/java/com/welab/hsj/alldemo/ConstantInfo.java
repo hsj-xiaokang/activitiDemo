@@ -19,6 +19,14 @@ public interface ConstantInfo {
     		public final static String wangxiaowu = "王小五";
     		public final static String zhaoxiaolu = "赵小六";
     		public final static String tianxiaoqi = "田小七";
+    		
+    		
+    		public final static String zhangsanfeng = "张三丰";
+    		public final static String zhoujielun = "周杰伦";
+    		
+    		public final static String mayun = "马云";
+    		public final static String mahuateng = "马化腾";
+    		public final static String xidada = "习大大";
       }
       
       public interface ProcessesInfo{

@@ -15,6 +15,9 @@ import org.junit.Test;
  *      5. 创建一个Spring Job Executor；
  *      6. 自动扫描并部署位于src/main/resources/processes目录下的流程处理文件【只会第一子集，下面嵌套不会部署】。
  *
+ *   act_ru_activiti表表示每一个task就是一个activiti，可以理解成activiti包含task，包含开始，结束，排他网关，并行网关等
+ *
+ *
  */
 public class TestActiviti {
    
