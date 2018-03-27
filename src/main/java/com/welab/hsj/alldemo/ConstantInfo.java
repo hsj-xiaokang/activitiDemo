@@ -2,6 +2,8 @@ package com.welab.hsj.alldemo;
 
 public interface ConstantInfo {
       public interface User{
+    	  public final static String zongjingli = "总经理";
+    	  public final static String jingli = "部门经理";
     		//张三-申请者
     		public final static String zhangsan = "张三";
     		//李四-部门经理
@@ -27,6 +29,22 @@ public interface ConstantInfo {
     		public final static String mayun = "马云";
     		public final static String mahuateng = "马化腾";
     		public final static String xidada = "习大大";
+    		
+    		
+    		public final static String xiaoA = "小A";
+    		public final static String xiaoB = "小B";
+    		public final static String xiaoC = "小C";
+    		public final static String xiaoD = "小D";
+    		public final static String F = "大F";
+    		public final static String H = "小h";
+    		
+    		public final static String dada = "大大";
+    		public final static String xiaoxiao = "小小";
+    		
+    		
+    		public final static String guojin = "郭靖";
+    		public final static String huangrong = "黄蓉";
+    		
       }
       
       public interface ProcessesInfo{

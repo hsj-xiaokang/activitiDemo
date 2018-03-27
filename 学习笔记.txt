@@ -62,3 +62,8 @@ B.注意事项
 	#何胜金添加
 	http://blog.csdn.net/loveuserzzz/article/details/52789991?locationNum=13
 	http://blog.csdn.net/fanxiangru999/article/details/79074730
+	#Spring Boot集成官方的Modeler设计器-github:https://github.com/Mr-Felixu
+	https://blog.csdn.net/xufei_0320/article/details/78129417
+	
+	  
+	#进度第二天-9.工作流提供的用户角色组（IdentityService）-完结
