@@ -57,7 +57,7 @@ public class ModelController {
      * @throws UnsupportedEncodingException
      */
     @RequestMapping("/creatAModels")
-    @PostMapping
+    @GetMapping
     public Map<String,Object> newModel() throws UnsupportedEncodingException {
         RepositoryService repositoryService = processEngine.getRepositoryService();
         //初始化一个空模型
@@ -112,7 +112,7 @@ public class ModelController {
      * @param id
      * @return
      */
-    @DeleteMapping("{id}")
+    @GetMapping("{id}")
     public Object deleteModel(@PathVariable("id") String id) {
         RepositoryService repositoryService = processEngine.getRepositoryService();
         repositoryService.deleteModel(id);
@@ -120,13 +120,13 @@ public class ModelController {
     }
 
     /**
-     * 发布模型为流程定义
+     * 发布模型为流程定义并部署
      *
      * @param id
      * @return
      * @throws Exception
      */
-    @PostMapping("{id}/deployment")
+    @GetMapping("{id}/deployment")
     public Object deploy(@PathVariable("id") String id) throws Exception {
 
         //获取模型
