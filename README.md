@@ -85,19 +85,19 @@
 ##############################中文数据库乱码###############################
 新增数据库记录时，中文乱码问题解决：
 
-
+>>![image](https://img-blog.csdn.net/20180408120125638?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpbmdodWFuMjAxMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
 
 
 
 在开发工具环境编码格式：
-
+>>![image](https://img-blog.csdn.net/20180408115926440?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpbmdodWFuMjAxMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
 数据库表字段编码信息编码格式：
 
-
+>>![image](https://img-blog.csdn.net/20180408120009156?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RpbmdodWFuMjAxMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 都没有问题的情况下，还是出现保存中文乱码问题，则可以试试
 
