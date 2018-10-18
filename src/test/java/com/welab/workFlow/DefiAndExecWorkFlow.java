@@ -43,11 +43,11 @@ public class DefiAndExecWorkFlow {
 
     @Test
     public void contextLoads() throws Exception {
-        createDeployment();//1发布流程
+//        createDeployment();//1发布流程
 //        startProcessInstanceByKey();//2发起一个流程实例
 //        createTaskQueryManagement();//3 Management查询待办任务
 //        completeTaskManagement();//4 Management处理某个任务
-//        createTaskQueryKermit();// 5 Kermit 查询待办任务
+        createTaskQueryKermit();// 5 Kermit 查询待办任务
 //        completeTaskKermit(); //6 Kermit处理任务
     }
     
@@ -157,7 +157,7 @@ public class DefiAndExecWorkFlow {
     public void createDeployment(){
         RepositoryService repositoryService = processEngine.getRepositoryService();
         repositoryService.createDeployment()
-          .addClasspathResource("processes/workFlow/SubProcessTwoMethod.bpmn")
+          .addClasspathResource("processes/workFlow/vacationRequest.bpmn")
           .deploy();
 
         System.out.println("Number of process definitions==========" + repositoryService.createProcessDefinitionQuery().count());
