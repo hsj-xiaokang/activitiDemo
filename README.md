@@ -80,3 +80,25 @@
 
 
 参考资料：http://www.kailing.pub/article/index/arcid/137.html
+
+
+##############################中文数据库乱码###############################
+新增数据库记录时，中文乱码问题解决：
+
+
+
+
+
+
+
+在开发工具环境编码格式：
+
+
+
+数据库表字段编码信息编码格式：
+
+
+
+都没有问题的情况下，还是出现保存中文乱码问题，则可以试试
+
+useUnicode=true&amp;characterEncoding=utf-8 改成  useUnicode=true&amp&characterEncoding=utf-8

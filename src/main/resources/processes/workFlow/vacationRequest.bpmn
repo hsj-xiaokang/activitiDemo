@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20" id="definitions">
-  <process id="vacationRequest" name="Vacation request" isExecutable="true">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+  <process id="vacationRequest-请假" name="Vacation request" isExecutable="true">
     <startEvent id="request" activiti:initiator="employeeName">
       <extensionElements>
         <activiti:formProperty id="numberOfDays" name="Number of days" type="long" required="true"></activiti:formProperty>
@@ -9,7 +9,7 @@
       </extensionElements>
     </startEvent>
     <sequenceFlow id="flow1" sourceRef="request" targetRef="handleRequest"></sequenceFlow>
-    <userTask id="handleRequest" name="Handle vacation request" activiti:candidateGroups="management">
+    <userTask id="handleRequest" name="Handle vacation request-测试" activiti:candidateGroups="management">
       <documentation>${employeeName} would like to take ${numberOfDays} day(s) of vacation (Motivation: ${vacationMotivation}).</documentation>
       <extensionElements>
         <activiti:formProperty id="vacationApproved" name="Do you approve this vacation" type="enum" required="true">
@@ -53,8 +53,8 @@
     </sequenceFlow>
     <endEvent id="theEnd2"></endEvent>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_vacationRequest">
-    <bpmndi:BPMNPlane bpmnElement="vacationRequest" id="BPMNPlane_vacationRequest">
+  <bpmndi:BPMNDiagram id="BPMNDiagram_vacationRequest-请假">
+    <bpmndi:BPMNPlane bpmnElement="vacationRequest-请假" id="BPMNPlane_vacationRequest-请假">
       <bpmndi:BPMNShape bpmnElement="request" id="BPMNShape_request">
         <omgdc:Bounds height="35.0" width="35.0" x="30.0" y="126.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
