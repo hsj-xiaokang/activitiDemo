@@ -32,7 +32,7 @@ public class TestActiviti {
 		pec.setJdbcDriver("com.mysql.jdbc.Driver");
 		pec.setJdbcUrl("jdbc:mysql://localhost:3306/activitidemo?useUnicode=true&characterEncoding=utf8");
 		pec.setJdbcUsername("root");
-		pec.setJdbcPassword("HSJissmart");
+		pec.setJdbcPassword("HSJissmart1");
 		
 		pec.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
 		
